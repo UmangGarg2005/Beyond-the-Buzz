@@ -1,10 +1,10 @@
 ## Beyond-the-Buzz
-__1. Reading The Input:__
+1. Reading The Input : 
 To start with the code I imported basic modules like `pandas`, `numpy`, `tensorflow`, `sklearn.preprocessing`.Then I read the given file __train.csv__ using `pd.read_csv()`. As at the end we need to check the accuracy of the training I split the given data into two subdata namely __train and val__ using `sample()` function. Then I specified what is the input and output ('*x*' for input and '*y*' for output we desire ,i.e. __VERDICT__). Also as the there is the wide range of numbers in data from 100 to 1000000, to minimize the cost (or loss) the input data is scaled down using `StandardScalar()` and `transform()` functions.
-__2. Modelling Neural Network:__
+2. Modelling Neural Network : 
 Then layers of our neural network are created using `tensorflow.keras.Sequential()` which arranges the layers in linear form.There are __9 units__ in first layer which is equal to the number of columns in **x_train** and **x_val** followed by **64** and **32 units** in first hidden layer and second hidden layer respectively.Last layer consist of 1 unit.In first and second hidden layer we used `activation='relu'` because it is found to be more efficient in this case.On the other hand,in case of output `sigmoid` function is used to convert the given value between __0 to 1__.For compiling ,`adam` (adaptive moment estimation) optimatization is used which is a further extension of stochastic gradient descent to update network weights during training. Also `'binary crossentropy'` is ued for the `loss` attribute and `metrics='accuracy'` for evaluating accuracy at each step.Finally batch size and epochs are taken 60 and 50 respectively to make the program more efficient.Then the accuracy is calculated for the val part and it comes out to be around __94.21%__.
-__3. Data Prediction:__
+3. Data Prediction : 
 To predict the data for the given file (test.csv), we first read the csv files using same method in step 1.Then we used `predict()` function to predict the value of the input data which is then converted to boolean using `astype(int)` and setting 0.5 as boundary. 
-__4. Saving data in csv format:__
+4. Saving data in csv format : 
 The predicted values were then saved into a file named __predictions.csv__.This is done by making a dictionary of two keys namely __'Id'__ and __'VERDICT'__ with key values Id number (same as input data) and the predicted values respectively which is then converted into __pandas__ dataformat using `dataframe()`.Then finally the data
 is saved to the file __'predictions.csv'__ .
