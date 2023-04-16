@@ -1,2 +1,2 @@
 # Beyond-the-Buzz
-To start with the code I immported basic modules like `pandas`, `numpy`, `tensorflow`, `sklearn.preprocessing`.Then I read the given file __train.csv__ using
+To start with the code I immported basic modules like `pandas`, `numpy`, `tensorflow`, `sklearn.preprocessing`.Then I read the given file __train.csv__ using `pd.read_csv()`. As at the end we need to check the accuracy of the training I split the given data into two subdata using `space()` function. Then I sppecified what is the input and output ('x' for input and 'y' for output we desire ). Also as the there is the wide range of numbers in data from 100 to 1000000, I scaled down the input data using `StandardScalar()` and `transform()` functions.
